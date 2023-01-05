@@ -7,4 +7,4 @@ I pulled several external APIs from the Sleeper Fantasy Football website in orde
 
 Once the data was pulled and sorted I wrote some CSS to style and make the standings look more appealing to the user. The CSS was input directly into my WordPress website. If you are inputing the CSS into a scratch web browser it will look a bit different compared to mine.
 
-<img alt="Fantasy Frenzy Standings Page" src="https://i.imgur.com/TJltn0H.png" width="100px" />
+<img alt="Fantasy Frenzy Standings Page" src="https://i.imgur.com/TJltn0H.png" />
