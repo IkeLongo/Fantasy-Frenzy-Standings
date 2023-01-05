@@ -1,4 +1,4 @@
-# Fantasy Frenzy Standings
+# Fantasy Frenzy Standings Page
 Pulled several APIs using HTML, JavaScript, and CSS to gather the points, username, and league name of the championship teams for the Fantasy Frenzy Tournament.
 
 The code is within the master branch of the repo. 
