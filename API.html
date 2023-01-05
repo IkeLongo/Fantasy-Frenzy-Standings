@@ -1,0 +1,303 @@
+<html>
+    <head>
+        <h1>Fantasy Frenzy Championship Standings</h1>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&display=swap" rel="stylesheet">
+        <link rel = "stylesheet" href = "API.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+
+            function funCall() {
+
+                //ARRAY OF LEAGUE ID #'S
+                var Leagues = [
+                '846221740483936256', //AFC 1
+                '846773197419458560',
+                '846870095253876736', //AFC 2 
+                '847184864674459648',
+                '847621296245301248', //AFC 3
+                '847921259424653312',
+                '848041643117494272', //AFC 4
+                '848192953888411648',
+                '848406401540820992', //AFC 5
+                '848433710217920512',
+                '848824468573900800', //AFC 6
+                '849012942040064000',
+                '849156292315561984', //AFC 7
+                '849157124025090048',
+                '849405549220077568', //AFC 8
+                '849494657107898368',
+                '850151085690683392', //AFC 9
+                '850152042369519616',
+                '850226614687105024', //AFC 10
+                '850417570178797568', 
+                '850294946161332224', //AFC 11
+                '850524049061834752',
+                '850599935970750464', //AFC 12 
+                '850601030054948864',
+                '850842493137326080', //AFC 13
+                '851473414911803392',
+                '851511081976328192', //AFC 14
+                '851523232984047616',
+                '852343446684409856', //AFC 15
+                '852671865003556864',
+                '853046490925486080', //AFC 16
+                '853048712291794944',
+                '853570315484258304', //AFC 17
+                '853873805934845952',
+                '855294795097161728', //AFC 18
+                '855295409621413888',
+                '855549331401469952', //AFC 19
+                '855549754195673088',
+                '855550291632857088', //AFC 20
+                '855550898145968128',
+                '855928995034832896', //AFC 21
+                '855929778262384640',
+                '856318380876111872', //AFC 22 
+                '856944676018724864',
+                '856946294009245696', //AFC 23
+                '857308618373079040',
+                '857310151735099392', //AFC 24
+                '857476646201040896',
+                '857477841837764608', //AFC 25
+                '857757097838997504',
+                '857863548418772992', //AFC 26
+                '857864213887029248',
+                '858185839715393536', //AFC 27
+                '858402851620270080',
+                '858412455494258688', //AFC 28
+                '858496141023629312',
+                '858534849395396608', //AFC 29
+                '858538004900356096',
+                '858589717732642816', //AFC 30
+                '858839952924979200',
+                '858845501854990336', //AFC 31
+                '858846625794220032',
+                '858847298812243968', //AFC 32 
+                '858847749154619392',
+                '858848437683195904', //AFC 33
+                '858849239906770944',
+                '858850641693507584', //AFC 34
+                '858851163414589440',
+                '858851731818246144', //AFC 35
+                '858853546848792576',
+                '858855625000607744', //AFC 36
+                '858856453312724992',
+                '858856930741956608', //AFC 37
+                '858857729115156480',
+                '858858166585278464', //AFC 38
+                '858858594915966976',
+                '858859175701241856', //AFC 39
+                '858859875093032960',
+                '858860378287935488', //AFC 40
+                '858860868136497152',
+                '858865097983008768', //AFC 41
+                '858865514745823232',
+                '858866066426830848', //AFC 42 
+                '858866851579564032',
+                '858867221244526592', //AFC 43
+                '858867767372271616',
+                '858872384202055680', //AFC 44
+                '858873829244637184',
+                '858874324755554304', //AFC 45
+                '858874967595548672',
+                '858875375604834304', //AFC 46
+                '858875860730650624',
+                '863168616928010240', //AFC 47
+                '863169416890789888',
+                '863170322659155968', //AFC 48
+                '863170833454080000',
+                '863171345725362176', //AFC 49
+                '863171845262782464',
+                '863172698048684032', //AFC 50
+                '863173086214725632',
+                '864312907477975040', //AFC 51
+                '864326787390402560',
+                '864327515857121280', //AFC 52 
+                '864327916996169728',
+                '864328251017957376', //AFC 53
+                '864328644942778368',
+                '864329060308873216', //AFC 54
+                '864329445677334528',
+                '865122375551795200', //AFC 55
+                '865123341055447040',
+                '865123942938062848', //AFC 56
+                '865124426809761792',
+                '865124951001288704', //AFC 57
+                '865125482906161152',
+                '865126276380372992', //AFC 58
+                '865127028876292096',
+                '866037942118940672', //AFC 59
+                '866741210973343744',
+                '866741859165274112', //AFC 60
+                '866742545240170496',
+                '867833286980976640', //AFC 61
+                '867834105717518336',
+                '867834465915994112', //AFC 62 
+                '867834886210396160',
+                '868212321409986560', //AFC 63
+                '868212836051107840',
+                '868213204713627648', //AFC 64
+                '868213579982221312',
+                '868560030948061184', //AFC 65
+                '868560664774533120',
+                '869269664725901312', //AFC 66
+                '869270152934518784',
+                '869270924149600256', //AFC 67
+                '869271413041881088',
+                '870065842241605632', //AFC 68
+                '870067927808913408',
+                '870068406798458880', //AFC 69
+                '870068752157450240',
+                '870374525429256192', //AFC 70
+                '870374933296050176',
+                '870871406651555840', //AFC 71
+                '871093143771279360',
+                '871093841363693568', //AFC 72 
+                '871094217538260992',
+                '871533977993936896', //AFC 73
+                '871534433516318720',
+                '871534596121092096', //AFC 74
+                '871534736001183744',
+                '873280954599432192', //AFC 75
+                '873348895785328640',
+                '873382997959802880', //AFC 76
+                '873383069082673152',
+                ];
+
+                var arr = [];
+
+                //LOOP TO GATHER DATA FROM EACH LEAGUE AND TEAMS
+                for (let i = 0; i < Leagues,length; i++) {
+
+                    //SET CONSTANT 'x' TO LEAGUE ID #
+                    const x = (Leagues[i]);
+
+                    //THIS CONSTANT RETURNS ALL API DATA AT ONCE
+                    const getData = async (url) => {
+                        const response = await fetch(url);
+
+                        return await response.json();
+                    };
+                
+                    //RETURNS DATA FROM EACH LEAGUE...GATHERS TEAM1 & TEAM2 POINTS, DISPLAY NAME, & LEAGUE NAME
+                    const runApiQueries = async() => {
+
+                        //API URL WITH UPDATED LEAGUE # FROM THE LOOP
+                        const BRACKET_URL = 'https://api.sleeper.app/v1/league/873383069082673152/winners_bracket'
+                        const ROSTERS_URL = 'https://api.sleeper.app/v1/league/873383069082673152/rosters'
+                        const USERS_URL = 'https://api.sleeper.app/v1/league/873383069082673152/users'
+                        const MATCHUP_URL = 'https://api.sleeper.app/v1/league/873383069082673152/matchups/17'
+                        const LEAGUES_URL = 'https://api.sleeper.app/v1/user/451584075656851456/leagues/nfl/2022'
+
+                        // GET BRACKET INFO
+                        const bracketData = await getData(BRACKET_URL);
+                        // FIND MATCHUP ID AND DISPLAY THOSE TEAMS
+                        const matchupData = bracketData.find(matchup => matchup.m == 7);
+                        const rosterIdTeam1 = (matchupData.t1);
+                        const rosterIdTeam2 = (matchupData.t2);
+
+                        //GET ROSTERS INFO
+                        const rostersData = await getData(ROSTERS_URL);
+                        // USE VALUE 'rosterId' OF TEAMS 1 & 2 TO FIND ROSTERS & OWNER_ID OF EACH TEAM
+                        const rosterTeam1 = rostersData.find(roster => roster.roster_id == rosterIdTeam1);
+                        const rosterTeam2 = rostersData.find(roster => roster.roster_id == rosterIdTeam2);
+                        const ownerIdTeam1 = (rosterTeam1.owner_id);
+                        const ownerIdTeam2 = (rosterTeam2.owner_id);
+
+                        //GET USERS INFO
+                        const usersData = await getData(USERS_URL);
+                        //USE VALUE 'ownerId' OF TEAMS 1 & 2 TO FIND USERS & DISPLAY_NAME OF EACH TEAM
+                        const userInfoTeam1 = usersData.find(user => user.user_id == ownerIdTeam1);
+                        const userInfoTeam2 = usersData.find(user => user.user_id == ownerIdTeam2);
+                        const displayNameTeam1 = (userInfoTeam1.display_name);
+                        const displayNameTeam2 = (userInfoTeam2.display_name);
+                        const avatarId1 = (userInfoTeam1.avatar);
+                        const avatarId2 = (userInfoTeam2.avatar);
+
+                        // const AVATAR_URL1 = 'https://sleepercdn.com/avatars/thumbs/' + avatarId1
+                        // const AVATAR_URL2 = 'https://sleepercdn.com/avatars/thumbs/' + avatarId2
+
+                        // const avatarThumb1 = await getData(AVATAR_URL1);
+                        // const avatarThumb2 = await getData(AVATAR_URL2);
+
+                        //GET MATCHUP INFO
+                        const matchupPointsData = await getData(MATCHUP_URL);
+                        // USE VALUE 'rosterId' OF TEAMS 1 & 2 TO FIND POINTS FOR MATCHUP
+                        const matchupRosterTeam1 = matchupPointsData.find(roster => roster.roster_id == rosterIdTeam1);
+                        const matchupRosterTeam2 = matchupPointsData.find(roster => roster.roster_id == rosterIdTeam2);
+                        const pointsTeam1 = (matchupRosterTeam1.points);
+                        const pointsTeam2 = (matchupRosterTeam2.points);
+
+                        console.log(pointsTeam1);
+                        console.log(pointsTeam2);
+
+                        //GET ALL LEAGUE INFO FROM ISAAC
+                        const ikeLeagueData = await getData(LEAGUES_URL);
+                        //GET SPECIFIC VALUE 'league id' TO FIND LEAGUE NAME
+                        const leagueId = ikeLeagueData.find(league => league.league_id == x);
+                        const leagueName = (leagueId.name);
+
+                        //THROW 'Team1' DATA INTO 'Team1' ARRAY
+                        const Team1 = {
+                            points: pointsTeam1.toFixed(2),
+                            name: displayNameTeam1,
+                            league: leagueName
+                        };
+
+                        //THROW 'Team2' DATA INTO 'Team2' ARRAY
+                        const Team2 = {
+                            points: pointsTeam2.toFixed(2),
+                            name: displayNameTeam2,
+                            league: leagueName
+                        };
+
+                        //PUSH 'Team1/Team2' ARRAY'S INTO 'arr' ARRAY
+                        arr.push(Team1);
+                        arr.push(Team2);
+
+                        //SORT 'arr' BY '.points' OBJECT IN DECENDING ORDER
+                        arr.sort((a, b) => parseFloat(b.points) - parseFloat(a.points));
+
+                        //CREATE VARIABLE TO INITIALIZE TABLE
+                        var list = "<ol><table border = 1>"
+                        
+                        list += '<thead>'
+                        list += '<tr id = headerrow>';
+                        list += '<td id = hpoints>' + 'Total Points' + '</td>';
+                        list += '<td id = hname>' + 'User Name' + '</td>';
+                        list += '<td id = hleague>' + 'League Name' + '</td>';
+                        list += '</tr>';
+                        list += '</thead>'
+                        list += '<tbody class = scroll-bar>'
+
+                        var Leagues2x = (Leagues.length * 2);
+
+                        //LOOPS EACH TIME A TEAM IS PASSED THROUGH TO INSERT INTO HTML TABLE FOR WEBPAGE
+                        for (var i = 0; i < Leagues2x; i++) {
+                            list += '<tr id = datarows>';
+                            list += '<td id = points><li>' + arr[i].points + '</td>';
+                            list += '<td id = name>' + arr[i].name + '</td>';
+                            list += '<td id = league>' + arr[i].league + '</li></td>';
+                            list += '</tr>';
+
+                            document.getElementById('standings').innerHTML = list
+                        };
+                        list += "</tbody></table></ol>"
+                    };
+                    runApiQueries();
+                };
+            };
+            funCall();
+
+        </script>
+    </head>
+
+    <body>
+
+        <div id = "standings"></div>
+
+    </body>
+
+</html>
