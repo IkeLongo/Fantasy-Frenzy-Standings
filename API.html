@@ -169,7 +169,7 @@
                 var arr = [];
 
                 //LOOP TO GATHER DATA FROM EACH LEAGUE AND TEAMS
-                for (let i = 0; i < Leagues,length; i++) {
+                for (let i = 0; i < Leagues.length; i++) {
 
                     //SET CONSTANT 'x' TO LEAGUE ID #
                     const x = (Leagues[i]);
@@ -185,10 +185,10 @@
                     const runApiQueries = async() => {
 
                         //API URL WITH UPDATED LEAGUE # FROM THE LOOP
-                        const BRACKET_URL = 'https://api.sleeper.app/v1/league/873383069082673152/winners_bracket'
-                        const ROSTERS_URL = 'https://api.sleeper.app/v1/league/873383069082673152/rosters'
-                        const USERS_URL = 'https://api.sleeper.app/v1/league/873383069082673152/users'
-                        const MATCHUP_URL = 'https://api.sleeper.app/v1/league/873383069082673152/matchups/17'
+                        const BRACKET_URL = 'https://api.sleeper.app/v1/league/' + x + '/winners_bracket'
+                        const ROSTERS_URL = 'https://api.sleeper.app/v1/league/' + x + '/rosters'
+                        const USERS_URL = 'https://api.sleeper.app/v1/league/' + x + '/users'
+                        const MATCHUP_URL = 'https://api.sleeper.app/v1/league/' + x + '/matchups/17'
                         const LEAGUES_URL = 'https://api.sleeper.app/v1/user/451584075656851456/leagues/nfl/2022'
 
                         // GET BRACKET INFO
@@ -213,8 +213,8 @@
                         const userInfoTeam2 = usersData.find(user => user.user_id == ownerIdTeam2);
                         const displayNameTeam1 = (userInfoTeam1.display_name);
                         const displayNameTeam2 = (userInfoTeam2.display_name);
-                        const avatarId1 = (userInfoTeam1.avatar);
-                        const avatarId2 = (userInfoTeam2.avatar);
+                        // const avatarId1 = (userInfoTeam1.avatar);
+                        // const avatarId2 = (userInfoTeam2.avatar);
 
                         // const AVATAR_URL1 = 'https://sleepercdn.com/avatars/thumbs/' + avatarId1
                         // const AVATAR_URL2 = 'https://sleepercdn.com/avatars/thumbs/' + avatarId2
@@ -229,9 +229,6 @@
                         const matchupRosterTeam2 = matchupPointsData.find(roster => roster.roster_id == rosterIdTeam2);
                         const pointsTeam1 = (matchupRosterTeam1.points);
                         const pointsTeam2 = (matchupRosterTeam2.points);
-
-                        console.log(pointsTeam1);
-                        console.log(pointsTeam2);
 
                         //GET ALL LEAGUE INFO FROM ISAAC
                         const ikeLeagueData = await getData(LEAGUES_URL);

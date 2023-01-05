@@ -1,117 +1,139 @@
-h1 {
-    text-align: center;
-    padding-left: 30px;
-    padding-right: 30px;
-    font-weight: bolder;
-    font-size: 50;
-    font-family: 'Nunito', sans-serif;
-    color: #EF8C40;
-    background-color: #3BC8DB;
-    -webkit-text-stroke: 1px;
-    -webkit-text-stroke-color: white;
-    border-radius: 10px;
-    border-width: 4px;
-    border-style: solid;
-    border-color: #EF8C40;
-    margin-bottom: 5px;
+table {
+    border-collapse: separate;
+    border-spacing: 3vw 1vh;
+    width: 80vw;
+}
+
+#standings {
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 thead {
-    text-align: center;
-    font-weight: bolder;
-    font-size:3vw;
-    font-family: 'Nunito', sans-serif;
-    color: #3BC8DB;
-    background-color: #EF8C40;
-    border-width: 3px;
-    border-style: solid;
-    border-color: #3BC8DB;
-    -webkit-text-stroke: .9px;
-    -webkit-text-stroke-color: white;
-}
-
-#tr1 {
-    line-height: 55px;
+line-height: 5vh;
+color: white;
+-webkit-text-stroke: .5px;
+-webkit-text-stroke-color: #3BC8DB;
+background-color: #EF8C40;
 }
 
 #hpoints {
-    padding-left: 15;
-    padding-right: 15;
-    border-radius: 10px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #3BC8DB;
+font-size: 4vh;
+font-weight: bolder;
+text-align: center;
+padding: 1vh 1vh;
+border-radius: 10px;
+box-shadow: 4px 3px 8px 1px #3BC8DB;
 }
 
 #hname {
-    padding-left: 15;
-    padding-right: 15;
-    border-radius: 10px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #3BC8DB;
+font-size: 4vh;
+font-weight: bold;
+text-align: center;
+padding: 1vh 1vh;
+border-radius: 10px;
+box-shadow: 4px 3px 8px 1px #3BC8DB;
 }
 
 #hleague {
-    padding-left: 15;
-    padding-right: 15;
-    border-radius: 10px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #3BC8DB;
+font-size: 4vh;
+font-weight: bold;
+text-align: center;
+padding: 1vh 1vh;
+border-radius: 10px;
+box-shadow: 4px 3px 8px 1px #3BC8DB;
 }
 
-tbody {
-    font-family: 'Nunito', sans-serif;
-    font-size: 24;
-    color: white;
-    background-color: #3BC8DB;
+tr#datarow {
+line-height: .1vh;
 }
 
-td {
-    text-align: center;
-    border-radius: 10px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #EF8C40;
+td#points {
+text-align: center;
+font-size: 2vh;
+padding: 3.5vh 1vh;
 }
 
-ol {
-    margin-top: 3px;
-    list-style:none;
-    counter-reset:li;
-    }
-    ol li{
-    position: relative;
-    }
-    ol li:before {
-    content: counter(li);
-    top: 6px;
-    margin-left:-45px;
-    border-radius:10px; 
-    counter-increment:li; 
-    background: #F449B5; 
-    color:white;
-    position:absolute; 
-    width: 35px; border:.5px solid white;
-    height: 15px; 
-    text-align: center; 
-    font-size:15px;
-    line-height: 13px;  
-    font-weight:500;
-    padding-top: 3px;
+td#name {
+text-align: center;
+font-size: 2vh;
+padding: 3.5vh 1vh;
 }
 
+td#league {
+text-align: center;
+font-size: 2vh;
+padding: 3.5vh 1vh;
+}
 
+@media screen and (max-width: 800px) {
 table {
-    border-spacing: 5px;
-    border: 2px white;
-    margin-left: auto;
-    margin-right: auto;
-}
+    border-collapse: separate;
+    border-spacing: 3vw 1vh;
+    width: 90vw;
+    }
 
-.scroll-bar {
-    height: 80%;
-    width: auto;
-    overflow: auto;
+    #standings {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    thead {
+        line-height: 5vh;
+        color: white;
+        -webkit-text-stroke: .3px;
+        -webkit-text-stroke-color: #3BC8DB;
+        background-color: #EF8C40;
+    }
+
+    #hpoints {
+        font-size: 4vh;
+        font-weight: bolder;
+        text-align: center;
+        padding: 1vh 1vh;
+        border-radius: 10px;
+        box-shadow: 4px 3px 8px 1px #3BC8DB;
+    }
+
+    #hname {
+        font-size: 4vh;
+        font-weight: bold;
+        text-align: center;
+        padding: 1vh 1vh;
+        border-radius: 10px;
+        box-shadow: 4px 3px 8px 1px #3BC8DB;
+    }
+
+    #hleague {
+        font-size: 4vh;
+        font-weight: bold;
+        text-align: center;
+        padding: 1vh 1vh;
+        border-radius: 10px;
+        box-shadow: 4px 3px 8px 1px #3BC8DB;
+    }
+
+    tr#datarow {
+        line-height: 4vw;
+    }
+
+    td#points {
+        text-align: center;
+        font-size: 2vh;
+        padding: 4vh 1vh;
+    }
+
+    td#name {
+        text-align: center;
+        font-size: 2vh;
+        padding: 4vh 1vh;
+    }
+
+    td#league {
+        text-align: center;
+        font-size: 2vh;
+        padding: 3vh 1vh;
+    }
 }
