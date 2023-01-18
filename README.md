@@ -1,5 +1,5 @@
 # Fantasy Frenzy Standings Page
-Pulled several APIs using HTML, JavaScript, and CSS to gather the points, username, and league name of the championship teams for the Fantasy Frenzy Tournament.
+Pulled several APIs using HTML, JavaScript, and CSS to gather data from 152 different leagues for the Fantasy Frenzy Tournament.
 
 I pulled several external APIs from the Sleeper Fantasy Football website in order to gather the points, username, and leaguename data from 152 different leagues within the Sleeper system. The data is sorted in decending order of points to get the standings of the Fantasy Frenzy Tournament. I did this so that each fantasy football competitor could see where their team stands for the final week. Otherwise, it would be impossible for each compeititor to see where they stand compared to the other 151 leagues. In total there are 304 teams. 
 
